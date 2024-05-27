@@ -1,11 +1,7 @@
-import React, { useMemo } from 'react'
 
-function Header({ cart,removeGuitar, incrementGuitar, decrementGuitar, clearCart }) {
 
-    // state derivados y useMemo para performance
-    const isEmpty = useMemo( () => cart.length === 0,[cart]);
+function Header({ cart,removeGuitar, incrementGuitar, decrementGuitar, clearCart, isEmpty, totalCart }) {
 
-    const totalCart = useMemo(() => cart.reduce((total,item)=> total + (item.quantity * item.price), 0),[cart]);
 
     return (
         <>
